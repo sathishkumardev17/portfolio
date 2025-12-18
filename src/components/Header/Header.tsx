@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Download } from 'lucide-react';
 import { navigationItems } from '@/data/navigation';
 import { useScrollPosition } from '@/utils/hooks';
+import { withBasePath } from '@/utils/paths';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +42,7 @@ const Header: React.FC = () => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Sathish-Kumar-CV.pdf';
+    link.href = withBasePath('/Sathish-Kumar-CV.pdf');
     link.download = 'Sathish-Kumar-CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -72,7 +73,7 @@ const Header: React.FC = () => {
             whileTap={{ scale: 0.95 }}
           >
             <img 
-              src="/logo.png" 
+              src={withBasePath('/logo.png')} 
               alt="SK Logo" 
               className="w-[75px] h-[75px] object-contain"
             />

@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/portfolio' : '';
 
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [],
-    formats: ['image/avif', 'image/webp'],
+    unoptimized: true, // REQUIRED for static export
   },
   compiler: {
     removeConsole: isProduction,
@@ -13,12 +13,13 @@ const nextConfig = {
   output: 'export',
   // Only apply basePath and assetPrefix in production builds (for GitHub Pages)
   ...(isProduction && {
-    basePath: '/portfolio',
+    basePath: basePath,
     assetPrefix: '/portfolio/',
-    images: {
-      unoptimized: true, // REQUIRED for GitHub Pages
-    },
+    trailingSlash: true,
   }),
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 }
 
 module.exports = nextConfig

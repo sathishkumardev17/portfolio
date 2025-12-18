@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Download, Play, ChevronDown } from 'lucide-react';
 import { heroData } from '@/data/hero';
 import { fadeIn, slideUp, slideInLeft, slideInRight } from '@/utils/animations';
+import { withBasePath } from '@/utils/paths';
 
 const Hero: React.FC = () => {
   const scrollToNext = () => {
@@ -16,7 +17,7 @@ const Hero: React.FC = () => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Sathish-Kumar-CV.pdf';
+    link.href = withBasePath('/Sathish-Kumar-CV.pdf');
     link.download = 'Sathish-Kumar-CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -126,7 +127,7 @@ const Hero: React.FC = () => {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent-blue" />
                 <div className="absolute inset-2 rounded-full bg-dark-200 flex items-center justify-center overflow-hidden">
                   <img 
-                    src="/profile.png" 
+                    src={withBasePath('/profile.png')} 
                     alt="Sathish Profile" 
                     className="w-full h-full object-cover scale-110"
                   />
