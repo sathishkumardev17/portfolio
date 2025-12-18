@@ -1,11 +1,9 @@
-# Portfolio Website - Pixel Perfect React Implementation
+# Sathish Portfolio Website
 
 A production-grade, fully optimized React portfolio website built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## 🚀 Features
 
-- **Pixel-Perfect Design**: Matches the reference design 1:1
-- **Smooth Animations**: Advanced Framer Motion animations with scroll triggers
 - **Fully Responsive**: Works seamlessly on desktop, tablet, and mobile
 - **Performance Optimized**: Code splitting, lazy loading, and memoization
 - **Dynamic & Config-Driven**: All content managed through configuration files
@@ -132,7 +130,7 @@ This project is open source and available under the MIT License.
 
 ## 👤 Author
 
-**Ronald** - Senior UI/UX Designer
+**Sathish** - Senior UI Engineer
 
 ---
 
